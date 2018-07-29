@@ -2,7 +2,7 @@
 
 ![效果图](https://github.com/MrTrying/BindexViewDemo/blob/master/pic/preview.gif?raw=true)
 
-##使用
+## 使用
 
 ##### XML属性使用
 
@@ -44,7 +44,7 @@ navigationView.addOnItemSelectedListener(new BindexNavigationView.OnItemSelected
 });
 ```
 
-##历史版本
+## 历史版本
 
 ##### V1.0.0
 - 文字选中(未选中)颜色
