@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <declare-styleable name="BindexNavigationView">
+        <!--选中文字颜色-->
         <attr name="selectedTextColor" format="color"/>
+        <!--未选中文字颜色-->
         <attr name="unselectedTextColor" format="color"/>
+        <!--选中文字背景颜色-->
         <attr name="selectedBackgroundColor" format="color"/>
+        <!--选中文字背景Drawable-->
         <attr name="selectedBackgroundDrawable" format="reference"/>
     </declare-styleable>
 </resources>

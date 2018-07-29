@@ -93,7 +93,6 @@ public class BindexNavigationView extends View {
         wordsPaint.setTextSize(textSize);
         wordsPaint.setAntiAlias(true);
         wordsPaint.setTextAlign(Paint.Align.CENTER);
-        wordsPaint.setTypeface(Typeface.DEFAULT_BOLD);
 
         bgPaint = new Paint();
         bgPaint.setAntiAlias(true);
@@ -121,6 +120,7 @@ public class BindexNavigationView extends View {
         for (int i = 0; i < indexBeanList.size(); i++) {
             boolean isSelected = i == currentSelectIndex;
             if (isSelected) {
+                //绘制选中背景
                 if (selectedBackgroundDrawable != null) {
                     RectF rectF = new RectF();
                     rectF.left = getPaddingLeft();
@@ -190,6 +190,14 @@ public class BindexNavigationView extends View {
     /**默认选中*/
     private void selectFirstIndex() {
         if(currentSelectIndex == 0 && !indexBeanList.isEmpty()){
+            notifyOnItemSelected(currentSelectIndex,indexBeanList.get(currentSelectIndex));
+        }
+    }
+
+    public void setSelectPosition(int position){
+        if(position >= 0 && position < indexBeanList.size()
+                && !indexBeanList.isEmpty()){
+            this.currentSelectIndex = position;
             notifyOnItemSelected(currentSelectIndex,indexBeanList.get(currentSelectIndex));
         }
     }
