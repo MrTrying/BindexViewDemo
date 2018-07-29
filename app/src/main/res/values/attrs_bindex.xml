@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="BindexNavigationView">
+        <attr name="selectedTextColor" format="color"/>
+        <attr name="unselectedTextColor" format="color"/>
+        <attr name="selectedBackgroundColor" format="color"/>
+        <attr name="selectedBackgroundDrawable" format="reference"/>
+    </declare-styleable>
+</resources>
