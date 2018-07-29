@@ -225,7 +225,7 @@ public class BindexNavigationView extends View {
         String type;
         final String indexValue;
 
-        IndexBean(@NonNull String indexValue) {
+        public IndexBean(@NonNull String indexValue) {
             this.indexValue = indexValue;
         }
 
