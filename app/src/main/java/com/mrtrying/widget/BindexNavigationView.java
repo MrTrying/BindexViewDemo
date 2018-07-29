@@ -1,4 +1,4 @@
-package com.mrtrying.bindexviewdemo;
+package com.mrtrying.widget;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -14,10 +14,11 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.text.TextUtils;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.MotionEvent;
 import android.view.View;
+
+import com.mrtrying.bindexviewdemo.R;
 
 import java.util.ArrayList;
 import java.util.List;

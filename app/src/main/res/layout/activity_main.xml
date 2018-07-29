@@ -7,12 +7,13 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <com.mrtrying.bindexviewdemo.BindexNavigationView
+    <com.mrtrying.widget.BindexNavigationView
         android:id="@+id/bindexNavigationView"
         android:layout_width="20dp"
         android:layout_height="match_parent"
         android:layout_alignParentRight="true"
         android:textSize="10sp"
+        app:selectedBackgroundColor="@color/colorPrimary"
         app:selectedBackgroundDrawable="@drawable/bg_select"
         app:unselectedTextColor="@color/colorPrimary"
         app:selectedTextColor="@color/colorAccent"/>
