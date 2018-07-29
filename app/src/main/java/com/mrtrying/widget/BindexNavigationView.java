@@ -8,7 +8,6 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Rect;
 import android.graphics.RectF;
-import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -57,6 +56,8 @@ public class BindexNavigationView extends View {
     /** 字体大小 */
     private int textSize = 28;
     private int offsetTop;
+    private int realHeight;
+    private int height;
 
     private List<OnItemSelectedListener> onItemSelectedListeners;
 
@@ -105,12 +106,18 @@ public class BindexNavigationView extends View {
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
         itemWidth = getMeasuredWidth();
-        int height = getMeasuredHeight();
-        int realHeight = itemWidth * indexBeanList.size();
-        if (height > realHeight) {
-            offsetTop = (height - realHeight) / 2 + getPaddingTop();
+        height = getMeasuredHeight();
+        setRealHeight();
+    }
+
+    private void setRealHeight() {
+        if(!indexBeanList.isEmpty()){
+            realHeight = itemWidth * indexBeanList.size();
+            if (height > realHeight) {
+                offsetTop = (height - realHeight) / 2 + getPaddingTop();
+            }
+            itemHeight = realHeight / indexBeanList.size();
         }
-        itemHeight = realHeight / indexBeanList.size();
     }
 
     @SuppressLint("DrawAllocation")
@@ -127,7 +134,7 @@ public class BindexNavigationView extends View {
                     rectF.top = itemHeight * i + offsetTop;
                     rectF.right = rectF.left + itemWidth;
                     rectF.bottom = rectF.top + itemHeight;
-                    canvas.saveLayer(rectF,null,Canvas.ALL_SAVE_FLAG);
+                    canvas.saveLayer(rectF,null, Canvas.ALL_SAVE_FLAG);
                     selectedBackgroundDrawable.setBounds((int) (rectF.left), (int) rectF.top, (int) rectF.right, (int) rectF.bottom);
                     selectedBackgroundDrawable.draw(canvas);
                     canvas.restore();
@@ -172,9 +179,10 @@ public class BindexNavigationView extends View {
         return true;
     }
 
-    public void setData(ArrayList<IndexBean> data) {
+    public void setData(ArrayList<?extends IndexBean> data) {
         indexBeanList.clear();
         indexBeanList.addAll(data);
+        setRealHeight();
         invalidate();
         //默认选中
         selectFirstIndex();
@@ -182,6 +190,7 @@ public class BindexNavigationView extends View {
 
     public void addAll(ArrayList<IndexBean> data) {
         indexBeanList.addAll(data);
+        setRealHeight();
         invalidate();
         //默认选中
         selectFirstIndex();
@@ -196,9 +205,12 @@ public class BindexNavigationView extends View {
 
     public void setSelectPosition(int position){
         if(position >= 0 && position < indexBeanList.size()
-                && !indexBeanList.isEmpty()){
+                && !indexBeanList.isEmpty()
+                && currentSelectIndex != position){
             this.currentSelectIndex = position;
-            notifyOnItemSelected(currentSelectIndex,indexBeanList.get(currentSelectIndex));
+            invalidate();
+            //双向联动有问题
+//            notifyOnItemSelected(currentSelectIndex,indexBeanList.get(currentSelectIndex));
         }
     }
 
