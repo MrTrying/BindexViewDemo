@@ -9,5 +9,11 @@
         <attr name="selectedBackgroundColor" format="color"/>
         <!--选中文字背景Drawable-->
         <attr name="selectedBackgroundDrawable" format="reference"/>
+        <!--背景色-->
+        <attr name="backgroundColor" format="color"/>
+        <!--背景是否圆角-->
+        <attr name="backgroundIsRound" format="boolean"/>
+        <!--背景是否撑满-->
+        <attr name="backgroundIsFill" format="boolean"/>
     </declare-styleable>
 </resources>
