@@ -4,7 +4,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 
-import com.mrtrying.bindexlib.BindexNavigationView;
+import com.mrtrying.library.BindexNavigationView;
 
 import java.util.ArrayList;
 

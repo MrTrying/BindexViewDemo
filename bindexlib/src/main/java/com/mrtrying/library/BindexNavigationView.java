@@ -1,4 +1,4 @@
-package com.mrtrying.bindexlib;
+package com.mrtrying.library;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
