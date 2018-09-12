@@ -46,6 +46,11 @@ navigationView.addOnItemSelectedListener(new BindexNavigationView.OnItemSelected
 
 ## 历史版本
 
+##### V1.0.1
+- 添加背景颜色属性
+- 添加背景是否圆角属性
+- 添加背景高度是否撑满属性
+
 ##### V1.0.0
 - 文字选中(未选中)颜色
 - 选中背景颜色
