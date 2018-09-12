@@ -9,7 +9,7 @@
 xml中提供设置文字选中和未选中颜色，以及选中的背景色或背景Drawable（背景Drawable优先于背景色）。
 
 ```xml
-<com.mrtrying.widget.BindexNavigationView
+<com.mrtrying.bindexlib.BindexNavigationView
     android:id="@+id/bindexNavigationView"
     android:layout_width="20dp"
     android:layout_height="match_parent"
