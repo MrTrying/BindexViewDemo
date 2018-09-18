@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <com.mrtrying.bindexlib.BindexNavigationView
+    <com.mrtrying.library.BindexNavigationView
         android:id="@+id/bindexNavigationView"
         android:layout_width="20dp"
         android:layout_height="match_parent"
